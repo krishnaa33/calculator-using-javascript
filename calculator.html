@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face{
+            font-family: jack;
+            src:url(./font/CrotahFreeVersionItalic-z8Ev3.ttf)
+        }
+        *{
+            margin :0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg,#6a11cb,#2575fc);
+            color: #fff;
+        }
+        .cal{
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px 30px;
+            background: #925584;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5) ;
+             
+            transition: all 0.3s ease-in-out;
+        }
+        button{
+            background: linear-gradient(135deg,#ff7eb3,#ff758c);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            padding :12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin: 5px;
+
+        }
+        button:hover{
+            background:linear-gradient(135deg,#ff758c,#ff7eb3) ;
+            transform: translateY(-3px)scale(1.05);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+        button:active{
+            transform: translatey(2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        button:focus{
+            outline:none;
+            box-shadow: 0 0 8px rgba(255,117,140,0.8);
+        }
+        input{
+            width:100%;
+            max-width: 400px;
+            padding: 12px  ;
+            font-size:1rem;
+            color: #333;
+            background: #fff;
+            border:2px solid transparent;
+            border-radius: 25px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+            transition: all 0.3s ease-in-out;
+            outline:none;
+        }
+        input:focus{
+            border-color:#ff758c;
+            box-shadow: 0 8px 20px rgba(255,117,140,0.5);
+            transform: scale(1.03);
+        }
+        input:hover{
+            transform:translateY(-2px);
+        }
+        input::placeholder{
+            color:#aaa;
+            font-family:jack;
+            transition: color 0.3s ease-in-out;
+        }
+        input:focus::placeholder{
+            color: #ff758c;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>SIMPLE CALCULATOR</h1>
+    <div class="cal">
+        
+    <div id="calculator">
+        
+        <input type="text" placeholder="Try Something......." name="" id="cal">
+        <br>
+        <br>
+        <div id="btn">
+            <button onclick="btn('1')">1</button>
+            <button onclick="btn('2')">2</button>
+            <button onclick="btn('3')">3</button>
+            <button onclick="btn('4')">4</button>
+            <button onclick="btn('5')">5</button>
+            <br><br>
+            <button onclick="btn('6')">6</button>
+            <button onclick="btn('7')">7</button>
+            <button onclick="btn('8')">8</button>
+            <button onclick="btn('9')">9</button>
+            <button onclick="btn('0')">0</button>
+            <br><br>
+            <button onclick="btn('+')">+</button>
+            <button onclick="btn('-')">-</button>
+            <button onclick="btn('*')">*</button>
+            <button onclick="btn('/')">/</button>
+            <button onclick="submit()">=</button>
+        </div>
+
+    </div>
+</div>
+    <script>
+        const box=document.querySelector("#cal")
+        
+        function btn(op)
+        {
+            box.value=box.value+op
+        }
+        function submit()
+        {
+            box.value=eval(box.value)
+        }
+    </script>
+</body>
+</html>
